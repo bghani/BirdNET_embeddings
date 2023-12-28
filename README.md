@@ -14,18 +14,18 @@ This script generates BirdNET embeddings for all sound files located in a specif
 2. **Clone the Repository:**
    - Clone this repository to your local machine using:
      ```
-     git clone <repository_url>
+     git clone https://github.com/bghani/BirdNET_embeddings.git
      ```
 
 3. **Create a Virtual Environment (Optional but recommended):**
    - Navigate to the cloned directory and create a virtual environment:
      ```bash
-     python3 -m venv myenv
+     python3 -m venv embeddings
      ```
    - Activate the virtual environment:
      ```bash
-     source myenv/bin/activate  # Unix/Linux/MacOS
-     myenv\Scripts\activate  # Windows
+     source embeddings/bin/activate  # Unix/Linux/MacOS
+     embeddings\Scripts\activate  # Windows
      ```
 
 4. **Install Python Dependencies:**
