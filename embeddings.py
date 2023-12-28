@@ -6,9 +6,6 @@
 
 import os
 import sys
-import numpy as np
-import glob
-import librosa
 import json
 
 # Load configuration
@@ -22,6 +19,7 @@ sys.path.append(MODULE_DIR)
 # Import necessary functions and classes from the BirdNET-Analyzer
 from util import embed_sample, BirdNET, embed_files
 
+# Set paths and other variables
 EMBEDDING_MODEL_PATH = os.path.join(MODULE_DIR, 'checkpoints/V2.4/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite')
 SOURCE_DIR = config.get('SOURCE_DIR', '/default/source/dir')
 TARGET_DIR = config.get('TARGET_DIR', '/default/target/dir')
