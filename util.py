@@ -15,6 +15,7 @@ from etils import epath
 import logging
 from typing import Any, List
 import dataclasses
+import glob
 
 
 @dataclasses.dataclass    
@@ -185,3 +186,31 @@ def embed_sample(
         
   except:
         return None
+  
+
+def embed_files(SAMPLE_RATE, source_directory, target_directory, model):
+    """
+    Process sound files to compute and save their BirdNET embeddings.
+    
+    :param source_directory: Directory containing the .wav files
+    :param target_directory: Directory where the embeddings will be saved
+    :param model: The BirdNET model used for generating embeddings
+    """
+    # Get list of all sound files in source directory
+    sound_files = glob.glob(os.path.join(source_directory, '*.wav')) + glob.glob(os.path.join(source_directory, '*.mp3')) + glob.glob(os.path.join(source_directory, '*.WAV'))
+
+
+    for sound_file in sound_files:
+        # Load the wav file
+        y, fs = librosa.load(sound_file, sr=SAMPLE_RATE, offset=0.0, res_type='kaiser_fast')
+
+        # Compute the embedding
+        embedding, _ = embed_sample(model, y, SAMPLE_RATE)
+
+        # Determine the output .npy filename
+        file_extension = os.path.splitext(sound_file)[1].lower()
+        if file_extension in ['.wav', '.WAV', '.mp3']:
+            npy_file = os.path.join(target_directory, os.path.basename(sound_file).replace(file_extension, '.npy'))
+
+            # Save the embedding
+            np.save(npy_file, embedding)
