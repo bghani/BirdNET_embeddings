@@ -66,12 +66,12 @@ class EmbeddingModel:
     return framed_audio
 
 @dataclasses.dataclass
-class BirdNet(EmbeddingModel):
-  """Wrapper for BirdNet models.
+class BirdNET(EmbeddingModel):
+  """Wrapper for BirdNET models.
 
   Attributes:
     model_path: Path to the saved model checkpoint or TFLite file.
-    class_list_name: Name of the BirdNet class list.
+    class_list_name: Name of the BirdNET class list.
     window_size_s: Window size for framing audio in samples.
     hop_size_s: Hop size for inference.
     num_tflite_threads: Number of threads to use with TFLite model.
@@ -93,7 +93,7 @@ class BirdNet(EmbeddingModel):
   class_list: "namespace.ClassList | None" = None
 
   def __post_init__(self):
-    logging.info('Loading BirdNet model...')
+    logging.info('Loading BirdNET model...')
     if self.model_path.endswith('.tflite'):
       self.tflite = True
       with tempfile.NamedTemporaryFile() as tmpf:
@@ -108,7 +108,7 @@ class BirdNet(EmbeddingModel):
       
 
   def embed_tflite(self, audio_array: np.ndarray) -> np.ndarray:
-    """Create an embedding and logits using the BirdNet TFLite model."""
+    """Create an embedding and logits using the BirdNET TFLite model."""
     input_details = self.model.get_input_details()[0]
     output_details = self.model.get_output_details()[0]
     embedding_idx = output_details['index'] - 1

@@ -20,7 +20,7 @@ MODULE_DIR = config.get('BIRDNET_ANALYZER_DIR', '/default/path/if/none/set')
 sys.path.append(MODULE_DIR)
 
 # Import necessary functions and classes from the BirdNET-Analyzer
-from util import embed_sample, BirdNet
+from util import embed_sample, BirdNET
 
 EMBEDDING_MODEL_PATH = os.path.join(MODULE_DIR, 'checkpoints/V2.4/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite')
 SOURCE_DIR = config.get('SOURCE_DIR', '/default/source/dir')
@@ -28,7 +28,7 @@ TARGET_DIR = config.get('TARGET_DIR', '/default/target/dir')
 SAMPLE_RATE = config.get('SAMPLE_RATE', 48000)
 
 # Load the BirdNET model
-embedding_model = BirdNet(SAMPLE_RATE, EMBEDDING_MODEL_PATH)
+embedding_model = BirdNET(SAMPLE_RATE, EMBEDDING_MODEL_PATH)
 
 def process_files(source_directory, target_directory, model):
     """
