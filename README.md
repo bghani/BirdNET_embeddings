@@ -5,7 +5,7 @@ This script generates BirdNET embeddings for all sound files located in a specif
 ## Prerequisites
 
 Before you run this script, make sure you have the following installed:
-- Python 3.6 or higher
+- Python 3.9 or higher
 - [librosa](https://librosa.org/doc/latest/index.html) for audio processing
 - [numpy](https://numpy.org/) for numerical operations
 - [BirdNET-Analyzer](https://github.com/kahst/BirdNET-Analyzer) module and its dependencies
