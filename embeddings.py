@@ -20,7 +20,7 @@ sys.path.append(MODULE_DIR)
 from util import embed_sample, BirdNET, embed_files
 
 # Set paths and other variables
-EMBEDDING_MODEL_PATH = os.path.join(MODULE_DIR, 'checkpoints/V2.4/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite')
+EMBEDDING_MODEL_PATH = os.path.join(MODULE_DIR, 'checkpoints/V2.4/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite') 
 SOURCE_DIR = config.get('SOURCE_DIR', '/default/source/dir')
 TARGET_DIR = config.get('TARGET_DIR', '/default/target/dir')
 SAMPLE_RATE = config.get('SAMPLE_RATE', 48000)
