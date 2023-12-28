@@ -1,6 +1,6 @@
 # Generate BirdNET Embeddings
 
-This script generates BirdNET embeddings for all sound files located in a specified input directory. The embeddings are saved in a specified output directory, making it easy to process large batches of audio data for further analysis or machine learning applications.
+This script generates BirdNET embeddings for all sound files located in a specified input directory (wav/mp3 files). The embeddings are saved in a specified output directory, making it easy to process large batches of audio data for further analysis or machine learning applications.
 
 
 ## Installation
