@@ -1,0 +1,2 @@
+# Ignore configuration file with sensitive paths
+config.json
