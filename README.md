@@ -62,7 +62,7 @@ python embeddings.py
 
 ## Output 
 
-The embeddings are saved as .npy files (numpy array format) in the specified output directory. Each file corresponds to an audio file from the input directory, containing the generated embedding.
+The embeddings are saved as .npy files by default (numpy array format) in the specified output directory, but can also be saved as json files by adding an argument to `embed_sample` function, in which case the embedding vectors will be saved as a list in respective json files. Each file corresponds to an audio file from the input directory, containing the generated embedding.
 
 ## Contributing
 

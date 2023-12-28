@@ -16,6 +16,7 @@ import logging
 from typing import Any, List
 import dataclasses
 import glob
+import json
 
 
 @dataclasses.dataclass    
@@ -188,7 +189,7 @@ def embed_sample(
         return None
   
 
-def embed_files(SAMPLE_RATE, source_directory, target_directory, model):
+def embed_files(SAMPLE_RATE, source_directory, target_directory, model, output_format='npy'):
     """
     Process sound files to compute and save their BirdNET embeddings.
     
@@ -209,8 +210,18 @@ def embed_files(SAMPLE_RATE, source_directory, target_directory, model):
 
         # Determine the output .npy filename
         file_extension = os.path.splitext(sound_file)[1].lower()
+        base_filename = os.path.basename(sound_file).replace(file_extension, '')
+        
         if file_extension in ['.wav', '.WAV', '.mp3']:
-            npy_file = os.path.join(target_directory, os.path.basename(sound_file).replace(file_extension, '.npy'))
-
-            # Save the embedding
-            np.save(npy_file, embedding)
+          # Define the output file path
+          if output_format == 'npy':
+              output_file = os.path.join(target_directory, base_filename + '.npy')
+              # Save the embedding as a .npy file
+              np.save(output_file, embedding)
+          elif output_format == 'json':
+              output_file = os.path.join(target_directory, base_filename + '.json')
+              # Convert the embedding to a list (if it's an array) and save as JSON
+              with open(output_file, 'w') as f:
+                  json.dump(embedding.tolist(), f)
+          else:
+              raise ValueError("Unsupported output format: " + output_format)
