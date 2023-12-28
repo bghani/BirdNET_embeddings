@@ -1,6 +1,6 @@
 # Generate BirdNET Embeddings
 
-This script generates BirdNET embeddings for all sound files located in a specified input directory (wav/mp3 files). The embeddings are saved in a specified output directory, making it easy to process large batches of audio data for further analysis or machine learning applications.
+This script generates BirdNET embeddings for all sound files located in a specified source directory (wav/mp3 files). The embeddings are saved in a specified target directory, making it easy to process large batches of audio data for further analysis or machine learning applications.
 
 
 ## Installation
@@ -62,7 +62,7 @@ python embeddings.py
 
 ## Output 
 
-The embeddings are saved as .npy files by default (numpy array format) in the specified output directory, but can also be saved as JSON files by adding an argument to `embed_files` function, in which case the embedding vectors will be saved as a lists in respective JSON files. Each file corresponds to an audio file from the input directory, containing the generated embedding.
+The embeddings are saved as .npy files by default (numpy array format) in the specified target directory, but can also be saved as JSON files by adding an argument to `embed_files` function, in which case the embedding vectors will be saved as a lists in respective JSON files. Each file corresponds to an audio file from the source directory, containing the generated embedding.
 
 ## Contributing
 
