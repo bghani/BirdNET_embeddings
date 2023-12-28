@@ -2,21 +2,46 @@
 
 This script generates BirdNET embeddings for all sound files located in a specified input directory. The embeddings are saved in a specified output directory, making it easy to process large batches of audio data for further analysis or machine learning applications.
 
-## Prerequisites
-
-Before you run this script, make sure you have the following installed:
-- Python 3.9 or higher
-- [librosa](https://librosa.org/doc/latest/index.html) for audio processing
-- [numpy](https://numpy.org/) for numerical operations
-- [BirdNET-Analyzer](https://github.com/kahst/BirdNET-Analyzer) module and its dependencies
 
 ## Installation
 
-1. Clone this repository to your local machine.
-2. Ensure that all required libraries are installed by running.
+1. **System Requirements:**
+   - For Unix/Linux systems, install FFmpeg by running:
+     ```
+     sudo apt-get install ffmpeg
+     ```
 
+2. **Clone the Repository:**
+   - Clone this repository to your local machine using:
+     ```
+     git clone <repository_url>
+     ```
 
-3. Set up the BirdNET-Analyzer according to its [documentation](https://github.com/kahst/BirdNET-Analyzer).
+3. **Create a Virtual Environment (Optional but recommended):**
+   - Navigate to the cloned directory and create a virtual environment:
+     ```bash
+     python3 -m venv myenv
+     ```
+   - Activate the virtual environment:
+     ```bash
+     source myenv/bin/activate  # Unix/Linux/MacOS
+     myenv\Scripts\activate  # Windows
+     ```
+
+4. **Install Python Dependencies:**
+   - Ensure that you have a `requirements.txt` file in your project directory that lists all the necessary Python packages.
+   - Install all required libraries by running:
+     ```
+     pip install -r requirements.txt
+     ```
+
+5. **Clone the BirdNET-Analyzer repo:**
+
+```
+git clone https://github.com/kahst/BirdNET-Analyzer.git
+```
+
+This code has been tested with Python 3.9.12.
 
 ## Configuration
 
