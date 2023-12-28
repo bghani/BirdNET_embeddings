@@ -31,4 +31,4 @@ embedding_model = BirdNET(SAMPLE_RATE, EMBEDDING_MODEL_PATH)
 
 if __name__ == "__main__":
     # Process the sound files and generate embeddings
-    embed_files(SAMPLE_RATE, SOURCE_DIR, TARGET_DIR, embedding_model)
+    embed_files(SAMPLE_RATE, SOURCE_DIR, TARGET_DIR, embedding_model, output_format='npy')

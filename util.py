@@ -189,7 +189,7 @@ def embed_sample(
         return None
   
 
-def embed_files(SAMPLE_RATE, source_directory, target_directory, model, output_format='npy'):
+def embed_files(sr, source_directory, target_directory, model, output_format):
     """
     Process sound files to compute and save their BirdNET embeddings.
     
@@ -200,13 +200,17 @@ def embed_files(SAMPLE_RATE, source_directory, target_directory, model, output_f
     # Get list of all sound files in source directory
     sound_files = glob.glob(os.path.join(source_directory, '*.wav')) + glob.glob(os.path.join(source_directory, '*.mp3')) + glob.glob(os.path.join(source_directory, '*.WAV'))
 
+    # Check if the target directory exists, and create it if it doesn't
+    if not os.path.exists(target_directory):
+        os.makedirs(target_directory)
+
 
     for sound_file in sound_files:
         # Load the sound file
-        y, fs = librosa.load(sound_file, sr=SAMPLE_RATE, offset=0.0, res_type='kaiser_fast')
+        y, fs = librosa.load(sound_file, sr=sr, offset=0.0, res_type='kaiser_fast')
 
         # Compute the embedding
-        embedding, _ = embed_sample(model, y, SAMPLE_RATE)
+        embedding, _ = embed_sample(model, y, sr)
 
         # Determine the output .npy filename
         file_extension = os.path.splitext(sound_file)[1].lower()
