@@ -4,7 +4,7 @@
 # @Affiliation  : Naturalis Biodiversity Center
 # @Email   : burooj.ghani at naturalis.nl
 
-# Parts of this code are adapted from: https://github.com/google-research/chirp
+# Parts of this code are adapted from: https://github.com/google-research/perch
 
 import numpy as np
 import librosa
