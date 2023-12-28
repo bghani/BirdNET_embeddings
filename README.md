@@ -36,10 +36,10 @@ This script generates BirdNET embeddings for all sound files located in a specif
      ```
 
 5. **Clone the BirdNET-Analyzer repo:**
-
-```
-git clone https://github.com/kahst/BirdNET-Analyzer.git
-```
+   - Clone this repository to your local machine using:
+     ```
+     git clone https://github.com/kahst/BirdNET-Analyzer.git
+     ```
 
 This code has been tested with Python 3.9.12.
 
