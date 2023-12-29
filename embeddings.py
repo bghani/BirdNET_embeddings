@@ -16,7 +16,7 @@ with open('config.json', 'r') as config_file:
 MODULE_DIR = config.get('BIRDNET_ANALYZER_DIR', '/default/path/if/none/set')
 sys.path.append(MODULE_DIR)
 
-# Import necessary functions and classes from the BirdNET-Analyzer
+# Import necessary functions and classes
 from util import embed_sample, BirdNET, embed_files
 
 # Set paths and other variables
@@ -27,7 +27,6 @@ SAMPLE_RATE = config.get('SAMPLE_RATE', 48000)
 
 # Load the BirdNET model
 embedding_model = BirdNET(SAMPLE_RATE, EMBEDDING_MODEL_PATH)
-
 
 if __name__ == "__main__":
     # Process the sound files and generate embeddings
