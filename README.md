@@ -66,7 +66,7 @@ The embeddings are saved as .npy files by default (numpy array format) in the sp
 
 This script, `train.py`, is designed to train a neural network on audio embeddings. It supports creating a model with an optional hidden layer and includes dropout for regularization. The script can process embeddings in both `.npy` (NumPy array format) and `.json` format. 
 
-## Arguments
+### Arguments
 
 - `directory`: (Required) The directory containing the embedding files. Each class's embeddings should be in a separate subdirectory.
 - `num_training_examples`: (Required) The number of training examples to use per class for training, rest of the examples in the subdirectories will be used for testing.
