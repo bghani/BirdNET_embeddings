@@ -52,7 +52,7 @@ Before running the script, configure the following settings:
 
 Alternatively, you can modify these settings directly in the script or provide a `config.json` file with the necessary paths.
 
-## Usage
+## Usage for computing embeddings
 
 To run the script, navigate to the directory containing the script and execute:
 
@@ -63,6 +63,25 @@ python embeddings.py
 ## Output 
 
 The embeddings are saved as .npy files by default (numpy array format) in the specified target directory, but can also be saved as JSON files by adding an argument to `embed_files` function, in which case the embedding vectors will be saved as a lists in respective JSON files. Each file corresponds to an audio file from the source directory, containing the generated embedding.
+
+# Usage for training a feed forward neural network using the computed embeddings
+
+This script, `train.py`, is designed to train a neural network on audio embeddings. It supports creating a model with an optional hidden layer and includes dropout for regularization. The script can process embeddings in both `.npy` (NumPy array format) and `.json` format. 
+
+## Usage
+
+### Arguments
+- `directory`: (Required) The directory containing the embedding files. Each class's embeddings should be in a separate subdirectory.
+- `num_training_examples`: (Required) The number of training examples to use per class.
+- `--hidden_neurons`: (Optional) The number of neurons in the hidden layer. If set to 0 (default), no hidden layer is used.
+- `--dropout`: (Optional) The dropout rate for regularization. Default is 0.5.
+
+### Running the Script
+To run the script, use the following command structure (without the optional arguments the model will train as a single-layer perceptron):
+
+```bash
+python train.py <directory> <num_training_examples> [--hidden_neurons <hidden_neurons>] [--dropout <dropout_rate>]
+
 
 ## Contributing
 

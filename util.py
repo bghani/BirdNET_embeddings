@@ -207,7 +207,10 @@ def embed_files(sr, source_directory, target_directory, model, output_format):
 
     for sound_file in sound_files:
         # Load the sound file
-        y, fs = librosa.load(sound_file, sr=sr, offset=0.0, res_type='kaiser_fast')
+        try:
+          y, fs = librosa.load(sound_file, sr=sr, offset=0.0, res_type='kaiser_fast')
+        except:
+          continue
 
         # Compute the embedding
         embedding, _ = embed_sample(model, y, sr)
