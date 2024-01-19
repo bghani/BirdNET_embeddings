@@ -1,7 +1,8 @@
 
 ## Overview
-This repository contains scripts for generating BirdNET embeddings from audio files and training a neural network on these embeddings.
+This repository features scripts for generating BirdNET embeddings from audio files and subsequently training a neural network on these embeddings. The workflow implemented in these scripts follows the pipeline outlined in the study "Global birdsong embeddings enable superior transfer learning for bioacoustic classification," as detailed in [Nature Scientific Reports](https://www.nature.com/articles/s41598-023-49989-z).
 
+### Embedding Generation
 
 ## Installation
 
