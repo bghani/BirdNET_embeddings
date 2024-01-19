@@ -72,10 +72,10 @@ This script, `train.py`, is designed to train a neural network on embeddings. It
 
 ### Arguments
 
-- `directory`: (Required) The directory containing the embedding files. Each class's embeddings should be in a separate subdirectory.
-- `num_training_examples`: (Required) The number of training examples to use per class for training, rest of the examples in the subdirectories will be used for testing.
+- `directory`: (Required) The directory containing the subdirectories for embedding files for different classes. Each class's embeddings should be in a separate subdirectory.
+- `num_training_examples`: (Required) The number of training examples to use per class for training; the rest of the examples in the subdirectories will be used for testing.
 - `--hidden_neurons`: (Optional) The number of neurons in the hidden layer. If set to 0 (default), no hidden layer is used.
-- `--dropout`: (Optional) The dropout rate for regularization. Default is 0.5.
+- `--dropout`: (Optional) The dropout rate for regularization. Default is 0.5. Dropout layer is only added if there is a hidden layer.
 
 ### Running the Script
 To run the script, use the following command structure (without the optional arguments the model will train as a single-layer perceptron):
