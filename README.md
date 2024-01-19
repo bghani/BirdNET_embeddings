@@ -43,7 +43,12 @@ This repository contains scripts for generating BirdNET embeddings from audio fi
 
 This code has been tested with Python 3.9.12.
 
-## Configuration
+
+## Usage for computing embeddings
+
+The script for generating embeddings processes all sound files (wav/mp3) located in a specified source directory. It uses the BirdNET model to generate embeddings for each audio file, which are then saved in a specified target directory. This functionality facilitates the processing of large batches of audio data for further analysis or machine learning applications.
+
+### Configuration
 
 Before running the script, configure the following settings:
 
@@ -51,11 +56,6 @@ Before running the script, configure the following settings:
 2. **Source and Target Directories**: Set the `SOURCE_DIR` and `TARGET_DIR` environment variables to your desired input and output directories, respectively.
 
 Alternatively, you can modify these settings directly in the script or provide a `config.json` file with the necessary paths.
-
-
-## Usage for computing embeddings
-
-The script for generating embeddings processes all sound files (wav/mp3) located in a specified source directory. It uses the BirdNET model to generate embeddings for each audio file, which are then saved in a specified target directory. This functionality facilitates the processing of large batches of audio data for further analysis or machine learning applications.
 
 To run the script, navigate to the directory containing the script and execute:
 
