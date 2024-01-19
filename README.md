@@ -1,6 +1,6 @@
-# Generate BirdNET Embeddings
 
-This script generates BirdNET embeddings for all sound files located in a specified source directory (wav/mp3 files). The embeddings are saved in a specified target directory, making it easy to process large batches of audio data for further analysis or machine learning applications.
+## Overview
+This repository contains scripts for generating BirdNET embeddings from audio files and training a neural network on these embeddings.
 
 
 ## Installation
@@ -52,7 +52,10 @@ Before running the script, configure the following settings:
 
 Alternatively, you can modify these settings directly in the script or provide a `config.json` file with the necessary paths.
 
+
 ## Usage for computing embeddings
+
+The script for generating embeddings processes all sound files (wav/mp3) located in a specified source directory. It uses the BirdNET model to generate embeddings for each audio file, which are then saved in a specified target directory. This functionality facilitates the processing of large batches of audio data for further analysis or machine learning applications.
 
 To run the script, navigate to the directory containing the script and execute:
 
@@ -62,9 +65,10 @@ python embeddings.py
 
 The embeddings are saved as .npy files by default (numpy array format) in the specified target directory, but can also be saved as JSON files by adding an argument to `embed_files` function, in which case the embedding vectors will be saved as a lists in respective JSON files. Each file corresponds to an audio file from the source directory, containing the generated embedding.
 
+
 ## Usage for training a feed forward neural network using the computed embeddings
 
-This script, `train.py`, is designed to train a neural network on audio embeddings. It supports creating a model with an optional hidden layer and includes dropout for regularization. The script can process embeddings in both `.npy` (NumPy array format) and `.json` format. 
+This script, `train.py`, is designed to train a neural network on embeddings. It supports creating a model with an optional hidden layer and includes dropout for regularization. The script can process embeddings in both `.npy` (NumPy array format) and `.json` format. 
 
 ### Arguments
 
