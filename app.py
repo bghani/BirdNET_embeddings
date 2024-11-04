@@ -43,15 +43,21 @@ if uploaded_files:
         os.makedirs("temp")
     # Process each uploaded audio file
     for uploaded_file in uploaded_files:
-        # Save the uploaded file to a temporary path
-        audio_path = os.path.join("temp", uploaded_file.name)
-        with open(audio_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
-        
-        # Generate embeddings
-        embedding = embed_sample(SAMPLE_RATE, audio_path, embedding_model)
-        embeddings_dict[uploaded_file.name] = embedding.tolist()  # Convert numpy array to list for JSON serialization
+    # Save the uploaded file to a temporary path
+    audio_path = os.path.join("temp", uploaded_file.name)
+    with open(audio_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
     
+    # Generate embeddings
+    embedding = embed_sample(SAMPLE_RATE, audio_path, embedding_model)
+    
+    if embedding is not None:
+        embeddings_dict[uploaded_file.name] = embedding.tolist()  # Convert numpy array to list for JSON serialization
+    else:
+        st.error(f"Failed to generate embedding for {uploaded_file.name}. Please check the file format and content.")
+
+# Ensure the embeddings dictionary is not empty before creating the JSON
+if embeddings_dict:
     # Create a JSON file with all embeddings
     json_data = json.dumps(embeddings_dict, indent=4)
     json_buffer = io.BytesIO()
@@ -68,4 +74,4 @@ if uploaded_files:
     
     st.write("Embeddings have been generated and stored in a single JSON file.")
 else:
-    st.write("Please upload audio files to generate embeddings.")
+    st.warning("No valid embeddings were generated. Please check the uploaded files.")
