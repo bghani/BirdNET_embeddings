@@ -11,6 +11,7 @@ import streamlit as st
 import numpy as np
 import umap
 import matplotlib.pyplot as plt
+import io
 
 # Load configuration
 #with open('config.json', 'r') as config_file:
