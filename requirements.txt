@@ -4,5 +4,7 @@ tensorflow==2.11.0
 etils==1.0.0
 resampy
 scikit-learn
-umap
+streamlit
+umap-learn
+matplotlib
 
