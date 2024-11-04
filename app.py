@@ -50,6 +50,7 @@ if uploaded_files:
         
         # Generate embeddings
         embedding = embed_sample(SAMPLE_RATE, audio_path, embedding_model)
+        print(embedding)
         
         if embedding is not None:
             embeddings_dict[uploaded_file.name] = embedding.tolist()  # Convert numpy array to list for JSON serialization
