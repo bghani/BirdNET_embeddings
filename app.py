@@ -39,6 +39,10 @@ uploaded_files = st.file_uploader("Upload audio files", type=["wav", "mp3"], acc
 if uploaded_files:
     embeddings = []
     file_names = []
+    # Add this before processing the uploaded files
+    if not os.path.exists("temp"):
+        os.makedirs("temp")
+
 
     # Process each uploaded audio file
     for uploaded_file in uploaded_files:
