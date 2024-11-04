@@ -24,7 +24,7 @@ with open('config.json', 'r') as config_file:
 from util import embed_sample, BirdNET, embed_files
 
 # Set paths and other variables
-EMBEDDING_MODEL_PATH = 'checkpoints/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite') 
+EMBEDDING_MODEL_PATH = 'BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite') 
 SAMPLE_RATE = config.get('SAMPLE_RATE', 48000)
 
 # Load the BirdNET model
