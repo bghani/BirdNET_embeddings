@@ -1,0 +1,6 @@
+numpy==1.23.5
+librosa==0.9.2
+tensorflow==2.11.0
+etils==1.0.0
+resampy
+scikit-learn
